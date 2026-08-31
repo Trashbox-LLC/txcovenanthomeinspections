@@ -232,22 +232,22 @@ export const SERVICES: Service[] = [
     ],
     gallery: [
       {
-        label: "Exhaust Vent Penetration",
+        label: "Mechanical Exhaust Vents",
         image: "/images/services/appliances_page/exhaust-vent-penetration.webp",
         imageAlt: "Exhaust vent pipe penetration sealed in an attic space",
       },
       {
-        label: "Garbage Disposal",
+        label: "Garbage Disposals",
         image: "/images/services/appliances_page/garbage-disposal.webp",
         imageAlt: "Garbage disposal unit installed under a kitchen sink",
       },
       {
-        label: "Dryer Vent Connection",
+        label: "Dryer Exhaust Systems",
         image: "/images/services/appliances_page/dryer-vent-connection.webp",
         imageAlt: "Flexible dryer vent duct behind a laundry appliance",
       },
       {
-        label: "Gas Range Operation",
+        label: "Ranges, Cooktops, & Ovens",
         image: "/images/services/appliances_page/gas-range-operation.webp",
         imageAlt: "Gas range burners operating on a kitchen cooktop",
       },

@@ -166,6 +166,31 @@ describe("services", () => {
       },
     ]);
 
+    const appliances = getServiceBySlug("appliances");
+
+    expect(appliances?.gallery).toEqual([
+      {
+        label: "Mechanical Exhaust Vents",
+        image: "/images/services/appliances_page/exhaust-vent-penetration.webp",
+        imageAlt: "Exhaust vent pipe penetration sealed in an attic space",
+      },
+      {
+        label: "Garbage Disposals",
+        image: "/images/services/appliances_page/garbage-disposal.webp",
+        imageAlt: "Garbage disposal unit installed under a kitchen sink",
+      },
+      {
+        label: "Dryer Exhaust Systems",
+        image: "/images/services/appliances_page/dryer-vent-connection.webp",
+        imageAlt: "Flexible dryer vent duct behind a laundry appliance",
+      },
+      {
+        label: "Ranges, Cooktops, & Ovens",
+        image: "/images/services/appliances_page/gas-range-operation.webp",
+        imageAlt: "Gas range burners operating on a kitchen cooktop",
+      },
+    ]);
+
     for (const service of SERVICES) {
       expect(service.gallery.length).toBeGreaterThan(0);
       for (const item of service.gallery) {
