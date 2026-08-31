@@ -103,19 +103,20 @@ export const SERVICES: Service[] = [
     ],
     gallery: [
       {
-        label: "Generator & Utility Panel",
-        image: "/images/services/electrical_page/generator-utility-panel.webp",
-        imageAlt: "Generator and electrical meter mounted on an exterior wall",
+        label: "Electrical Fixtures",
+        image: "/images/services/electrical_page/electrical-fixtures.webp",
+        imageAlt: "Pendant light fixtures hanging in a residential hallway",
       },
       {
-        label: "Panel Interior Wiring",
-        image: "/images/services/electrical_page/panel-interior-wiring.webp",
-        imageAlt: "Branch circuit wiring inside an electrical panel",
+        label: "Branch Circuits & Connected Devices",
+        image:
+          "/images/services/electrical_page/branch-circuits-and-connected-devices.webp",
+        imageAlt: "Electrical outlet cover plate not flush with the wall",
       },
       {
-        label: "Main Breaker Connections",
-        image: "/images/services/electrical_page/main-breaker-connections.webp",
-        imageAlt: "Main breaker and service conductor connections",
+        label: "Service Entrance & Panel",
+        image: "/images/services/electrical_page/service-entrance-and-panel.webp",
+        imageAlt: "Open electrical service panel with breakers and wiring",
       },
     ],
   },

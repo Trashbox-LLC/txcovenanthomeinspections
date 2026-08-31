@@ -103,6 +103,27 @@ describe("services", () => {
       },
     ]);
 
+    const electrical = getServiceBySlug("electrical");
+
+    expect(electrical?.gallery).toEqual([
+      {
+        label: "Electrical Fixtures",
+        image: "/images/services/electrical_page/electrical-fixtures.webp",
+        imageAlt: "Pendant light fixtures hanging in a residential hallway",
+      },
+      {
+        label: "Branch Circuits & Connected Devices",
+        image:
+          "/images/services/electrical_page/branch-circuits-and-connected-devices.webp",
+        imageAlt: "Electrical outlet cover plate not flush with the wall",
+      },
+      {
+        label: "Service Entrance & Panel",
+        image: "/images/services/electrical_page/service-entrance-and-panel.webp",
+        imageAlt: "Open electrical service panel with breakers and wiring",
+      },
+    ]);
+
     const hvac = getServiceBySlug("hvac");
 
     expect(hvac?.gallery).toEqual([
