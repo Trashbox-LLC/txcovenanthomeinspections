@@ -137,19 +137,41 @@ export const SERVICES: Service[] = [
     ],
     gallery: [
       {
-        label: "Ridge Vent",
-        image: "/images/services/hvac_page/ridge-vent.webp",
-        imageAlt: "Ridge vent installed along a shingle roof peak",
+        label: "Plumbing Supply, Distribution Systems & Fixtures",
+        image:
+          "/images/services/hvac_page/plumbing-supply-distribution-systems-and-fixtures.webp",
+        imageAlt: "Exterior hose bib and plumbing fixture on a brick wall",
       },
       {
-        label: "Air Supply Vent",
-        image: "/images/services/hvac_page/air-supply-vent.webp",
-        imageAlt: "Interior HVAC supply register on a textured wall",
+        label: "Water Heating Equipment",
+        image: "/images/services/hvac_page/water-heating-equipment.webp",
+        imageAlt: "Gas water heater installed in an unfinished attic",
       },
       {
-        label: "Heating & Cooling Systems",
-        image: "/images/services/hvac_page/air-purification-system.webp",
-        imageAlt: "Whole-home air purification unit installed on ductwork",
+        label: "Drains, Waste & Vents",
+        image: "/images/services/hvac_page/drains-waste-and-vents.webp",
+        imageAlt: "PVC drain piping and water-damaged wood in a crawlspace",
+      },
+      {
+        label: "Gas Distribution Systems & Appliances",
+        image:
+          "/images/services/hvac_page/gas-distribution-systems-and-appliances.webp",
+        imageAlt: "Residential natural gas meter and distribution piping",
+      },
+      {
+        label: "Cooling Equipment",
+        image: "/images/services/hvac_page/cooling-equipment.webp",
+        imageAlt: "Outdoor air conditioning condenser unit beside a home",
+      },
+      {
+        label: "Duct Systems, Chases & Vents",
+        image: "/images/services/hvac_page/duct-systems-chases-and-vents.webp",
+        imageAlt: "Flexible HVAC ductwork routed through attic framing",
+      },
+      {
+        label: "Heating Equipment",
+        image: "/images/services/hvac_page/heating-equipment.webp",
+        imageAlt: "Interior of a gas furnace showing burners and controls",
       },
     ],
   },
