@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Gavel, Shield /* , Verified */ } from "lucide-react";
 import { FadeIn } from "@/components/atoms/FadeIn/FadeIn";
+import { SITE } from "@/lib/constants";
 
 const certifications = [
   // { icon: Verified, label: "InterNACHI Certified" },
@@ -45,6 +46,12 @@ export function CertificationsSection() {
           </motion.div>
         ))}
       </motion.div>
+
+      <FadeIn>
+        <p className="mt-stack-md text-sm text-on-surface-variant">
+          TREC ID: {SITE.trecId}
+        </p>
+      </FadeIn>
     </section>
   );
 }

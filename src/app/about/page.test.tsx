@@ -67,6 +67,12 @@ describe("AboutPage", () => {
     ).toBeTruthy();
   });
 
+  it("shows the TREC ID in the professional certifications area", () => {
+    render(<AboutPage />);
+
+    expect(screen.getByText("TREC ID: 27132")).toBeInTheDocument();
+  });
+
   it("does not include the inspection journey section", () => {
     render(<AboutPage />);
 
