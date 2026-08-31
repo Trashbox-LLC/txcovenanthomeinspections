@@ -27,8 +27,8 @@ describe("ServiceDetailGallery", () => {
 
     render(<ServiceDetailGallery gallery={service!.gallery} />);
 
-    expect(screen.getByText("Roof Flashing Detail")).toBeInTheDocument();
-    expect(screen.getByText("Window Seal Issue")).toBeInTheDocument();
+    expect(screen.getByText("Drainage")).toBeInTheDocument();
+    expect(screen.getByText("Roof Covering Materials")).toBeInTheDocument();
     expect(screen.getAllByRole("img")).toHaveLength(service!.gallery.length);
   });
 });

@@ -7,27 +7,27 @@ describe("ImageLightbox", () => {
     render(
       <ImageLightbox
         isOpen
-        image="/images/services/structural_page/roof-flashing-detail.webp"
-        imageAlt="Roof flashing detail inspected during a structural inspection"
-        label="Roof Flashing Detail"
+        image="/images/services/structural_page/drainage.webp"
+        imageAlt="Drainage and grading condition at a foundation corner"
+        label="Drainage"
         onClose={vi.fn()}
       />,
     );
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(
-      screen.getByRole("img", { name: /roof flashing detail inspected/i }),
+      screen.getByRole("img", { name: /drainage and grading condition/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Roof Flashing Detail")).toBeInTheDocument();
+    expect(screen.getByText("Drainage")).toBeInTheDocument();
   });
 
   it("does not render when closed", () => {
     render(
       <ImageLightbox
         isOpen={false}
-        image="/images/services/structural_page/roof-flashing-detail.webp"
-        imageAlt="Roof flashing detail inspected during a structural inspection"
-        label="Roof Flashing Detail"
+        image="/images/services/structural_page/drainage.webp"
+        imageAlt="Drainage and grading condition at a foundation corner"
+        label="Drainage"
         onClose={vi.fn()}
       />,
     );
@@ -41,9 +41,9 @@ describe("ImageLightbox", () => {
     const { container } = render(
       <ImageLightbox
         isOpen
-        image="/images/services/structural_page/roof-flashing-detail.webp"
-        imageAlt="Roof flashing detail inspected during a structural inspection"
-        label="Roof Flashing Detail"
+        image="/images/services/structural_page/drainage.webp"
+        imageAlt="Drainage and grading condition at a foundation corner"
+        label="Drainage"
         onClose={onClose}
       />,
     );
@@ -58,9 +58,9 @@ describe("ImageLightbox", () => {
     render(
       <ImageLightbox
         isOpen
-        image="/images/services/structural_page/roof-flashing-detail.webp"
-        imageAlt="Roof flashing detail inspected during a structural inspection"
-        label="Roof Flashing Detail"
+        image="/images/services/structural_page/drainage.webp"
+        imageAlt="Drainage and grading condition at a foundation corner"
+        label="Drainage"
         onClose={onClose}
       />,
     );

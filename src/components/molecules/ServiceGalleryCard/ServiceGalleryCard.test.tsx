@@ -5,29 +5,29 @@ describe("ServiceGalleryCard", () => {
   it("renders the gallery image label", () => {
     render(
       <ServiceGalleryCard
-        label="Roof Flashing Detail"
-        image="/images/services/structural_page/roof-flashing-detail.webp"
-        imageAlt="Roof flashing detail inspected during a structural inspection"
+        label="Drainage"
+        image="/images/services/structural_page/drainage.webp"
+        imageAlt="Drainage and grading condition at a foundation corner"
       />,
     );
 
     expect(
-      screen.getByRole("img", { name: /roof flashing detail inspected/i }),
+      screen.getByRole("img", { name: /drainage and grading condition/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Roof Flashing Detail")).toBeInTheDocument();
+    expect(screen.getByText("Drainage")).toBeInTheDocument();
   });
 
   it("opens an expanded image preview when the image is clicked", () => {
     render(
       <ServiceGalleryCard
-        label="Roof Flashing Detail"
-        image="/images/services/structural_page/roof-flashing-detail.webp"
-        imageAlt="Roof flashing detail inspected during a structural inspection"
+        label="Drainage"
+        image="/images/services/structural_page/drainage.webp"
+        imageAlt="Drainage and grading condition at a foundation corner"
       />,
     );
 
     fireEvent.click(
-      screen.getByRole("button", { name: /view larger roof flashing detail/i }),
+      screen.getByRole("button", { name: /view larger drainage/i }),
     );
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
@@ -37,14 +37,14 @@ describe("ServiceGalleryCard", () => {
   it("closes the expanded image preview", () => {
     render(
       <ServiceGalleryCard
-        label="Roof Flashing Detail"
-        image="/images/services/structural_page/roof-flashing-detail.webp"
-        imageAlt="Roof flashing detail inspected during a structural inspection"
+        label="Drainage"
+        image="/images/services/structural_page/drainage.webp"
+        imageAlt="Drainage and grading condition at a foundation corner"
       />,
     );
 
     fireEvent.click(
-      screen.getByRole("button", { name: /view larger roof flashing detail/i }),
+      screen.getByRole("button", { name: /view larger drainage/i }),
     );
     fireEvent.keyDown(window, { key: "Escape" });
 

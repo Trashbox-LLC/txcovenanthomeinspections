@@ -48,14 +48,60 @@ describe("services", () => {
   it("defines gallery cards with webp images for each service", () => {
     const structural = getServiceBySlug("structural");
 
-    expect(structural?.gallery).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          label: "Roof Flashing Detail",
-          image: "/images/services/structural_page/roof-flashing-detail.webp",
-        }),
-      ]),
-    );
+    expect(structural?.gallery).toEqual([
+      {
+        label: "Drainage",
+        image: "/images/services/structural_page/drainage.webp",
+        imageAlt: "Drainage and grading condition at a foundation corner",
+      },
+      {
+        label: "Doors & Windows",
+        image: "/images/services/structural_page/doors-and-windows.webp",
+        imageAlt: "Damaged door jamb and strike plate from forced entry or impact",
+      },
+      {
+        label: "Interior & Exterior Walls",
+        image:
+          "/images/services/structural_page/interior-and-exterior-walls.webp",
+        imageAlt: "Level used to check a cracked interior wall for movement",
+      },
+      {
+        label: "Stairways",
+        image: "/images/services/structural_page/stairways.webp",
+        imageAlt: "Handrail pulled away from the wall at the top of a stairway",
+      },
+      {
+        label: "Ceilings & Floors",
+        image: "/images/services/structural_page/ceilings-and-floors.webp",
+        imageAlt: "Crack running across tiled flooring",
+      },
+      {
+        label: "Fireplaces & Chimneys",
+        image: "/images/services/structural_page/fireplaces-and-chimneys.webp",
+        imageAlt: "Chimney and roof vent on an asphalt shingle roof",
+      },
+      {
+        label: "Porches, Balconies, Decks & Carports",
+        image:
+          "/images/services/structural_page/porches-balconies-decks-and-carports.webp",
+        imageAlt: "Exterior wooden porch stairs, railing, and deck structure",
+      },
+      {
+        label: "Roof Structure & Attic",
+        image: "/images/services/structural_page/roof-structure-and-attic.webp",
+        imageAlt: "Attic framing, insulation, and access hatch",
+      },
+      {
+        label: "Roof Covering Materials",
+        image: "/images/services/structural_page/roof-covering-materials.webp",
+        imageAlt: "Aerial view of asphalt shingle roof covering materials",
+      },
+      {
+        label: "Grading",
+        image: "/images/services/structural_page/grading.webp",
+        imageAlt: "Grading and soil conditions along a foundation wall",
+      },
+    ]);
 
     for (const service of SERVICES) {
       expect(service.gallery.length).toBeGreaterThan(0);
