@@ -128,28 +128,6 @@ describe("services", () => {
 
     expect(hvac?.gallery).toEqual([
       {
-        label: "Plumbing Supply, Distribution Systems & Fixtures",
-        image:
-          "/images/services/hvac_page/plumbing-supply-distribution-systems-and-fixtures.webp",
-        imageAlt: "Exterior hose bib and plumbing fixture on a brick wall",
-      },
-      {
-        label: "Water Heating Equipment",
-        image: "/images/services/hvac_page/water-heating-equipment.webp",
-        imageAlt: "Gas water heater installed in an unfinished attic",
-      },
-      {
-        label: "Drains, Waste & Vents",
-        image: "/images/services/hvac_page/drains-waste-and-vents.webp",
-        imageAlt: "PVC drain piping and water-damaged wood in a crawlspace",
-      },
-      {
-        label: "Gas Distribution Systems & Appliances",
-        image:
-          "/images/services/hvac_page/gas-distribution-systems-and-appliances.webp",
-        imageAlt: "Residential natural gas meter and distribution piping",
-      },
-      {
         label: "Cooling Equipment",
         image: "/images/services/hvac_page/cooling-equipment.webp",
         imageAlt: "Outdoor air conditioning condenser unit beside a home",
@@ -163,6 +141,33 @@ describe("services", () => {
         label: "Heating Equipment",
         image: "/images/services/hvac_page/heating-equipment.webp",
         imageAlt: "Interior of a gas furnace showing burners and controls",
+      },
+    ]);
+
+    const plumbing = getServiceBySlug("plumbing");
+
+    expect(plumbing?.gallery).toEqual([
+      {
+        label: "Plumbing Supply, Distribution Systems & Fixtures",
+        image:
+          "/images/services/plumbing_page/plumbing-supply-distribution-systems-and-fixtures.webp",
+        imageAlt: "Exterior hose bib and plumbing fixture on a brick wall",
+      },
+      {
+        label: "Water Heating Equipment",
+        image: "/images/services/plumbing_page/water-heating-equipment.webp",
+        imageAlt: "Gas water heater installed in an unfinished attic",
+      },
+      {
+        label: "Drains, Waste & Vents",
+        image: "/images/services/plumbing_page/drains-waste-and-vents.webp",
+        imageAlt: "PVC drain piping and water-damaged wood in a crawlspace",
+      },
+      {
+        label: "Gas Distribution Systems & Appliances",
+        image:
+          "/images/services/plumbing_page/gas-distribution-systems-and-appliances.webp",
+        imageAlt: "Residential natural gas meter and distribution piping",
       },
     ]);
 
