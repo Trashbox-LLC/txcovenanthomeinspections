@@ -1,4 +1,4 @@
-import { NAV_ITEMS } from "./navigation";
+import { isNavItemActive, NAV_ITEMS } from "./navigation";
 
 describe("navigation", () => {
   const servicesItem = NAV_ITEMS.find((item) => item.label === "Services");
@@ -27,5 +27,36 @@ describe("navigation", () => {
 
     expect(vendorsItem?.href).toBe("/preferred-vendors");
     expect(vendorsItem?.children).toBeUndefined();
+  });
+});
+
+describe("isNavItemActive", () => {
+  function item(label: string) {
+    const found = NAV_ITEMS.find((navItem) => navItem.label === label);
+    if (!found) {
+      throw new Error(`Missing nav item ${label}`);
+    }
+    return found;
+  }
+
+  it.each([
+    ["/", "Home"],
+    ["/about", "About"],
+    ["/about/", "About"],
+    ["/services", "Services"],
+    ["/services/", "Services"],
+    ["/services/structural/", "Services"],
+    ["/preferred-vendors", "Vendors"],
+    ["/preferred-vendors/", "Vendors"],
+    ["/contact", "Contact"],
+    ["/contact/", "Contact"],
+  ])("treats %s as the active %s tab", (pathname, label) => {
+    expect(isNavItemActive(pathname, item(label))).toBe(true);
+  });
+
+  it("does not mark other tabs active on a trailing-slash page", () => {
+    expect(isNavItemActive("/about/", item("Home"))).toBe(false);
+    expect(isNavItemActive("/contact/", item("Vendors"))).toBe(false);
+    expect(isNavItemActive("/preferred-vendors/", item("Contact"))).toBe(false);
   });
 });

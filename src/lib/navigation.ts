@@ -27,10 +27,21 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export function isNavItemActive(pathname: string, item: NavItem): boolean {
-  if (item.children) {
-    return pathname === item.href || pathname.startsWith(`${item.href}/`);
+function normalizePathname(pathname: string): string {
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return pathname.slice(0, -1);
   }
 
-  return pathname === item.href;
+  return pathname;
+}
+
+export function isNavItemActive(pathname: string, item: NavItem): boolean {
+  const current = normalizePathname(pathname);
+  const href = normalizePathname(item.href);
+
+  if (item.children) {
+    return current === href || current.startsWith(`${href}/`);
+  }
+
+  return current === href;
 }

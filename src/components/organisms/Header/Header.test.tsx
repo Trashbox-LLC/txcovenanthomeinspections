@@ -2,18 +2,30 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import { vi } from "vitest";
 import { Header } from "./Header";
 
+const { pathnameMock } = vi.hoisted(() => ({
+  pathnameMock: { current: "/" },
+}));
+
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/",
+  usePathname: () => pathnameMock.current,
 }));
 
 describe("Header", () => {
+  beforeEach(() => {
+    pathnameMock.current = "/";
+  });
+
   it("renders desktop navigation links", () => {
     render(<Header />);
     const nav = screen.getByRole("navigation", { name: /main/i });
     expect(nav).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^about$/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /^contact$/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /^services$/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /^contact$/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /^services$/i }),
+    ).toBeInTheDocument();
   });
 
   it("renders the phone number", () => {
@@ -90,6 +102,21 @@ describe("Header", () => {
     expect(phoneButton).toHaveClass("shrink");
     expect(phoneText).toHaveClass("text-center");
     expect(phoneText).toHaveClass("leading-tight");
+  });
+
+  it.each([
+    ["/", /^home$/i],
+    ["/about/", /^about$/i],
+    ["/services/", /^services$/i],
+    ["/preferred-vendors/", /^vendors$/i],
+    ["/contact/", /^contact$/i],
+  ])("gives %s the gold underline and gold text", (pathname, name) => {
+    pathnameMock.current = pathname;
+    render(<Header />);
+
+    const link = screen.getByRole("link", { name });
+    expect(link).toHaveClass("border-gold");
+    expect(link).toHaveClass("text-gold");
   });
 
   it("renders the TREC ID to the right of the call button without shrinking header items", () => {
