@@ -4,8 +4,9 @@ import { GeistSans } from "geist/font/sans";
 import { GoogleAdsTag } from "@/components/atoms/GoogleAdsTag/GoogleAdsTag";
 import { PageLayout } from "@/components/templates/PageLayout/PageLayout";
 import { HeroImagePreload } from "@/components/organisms/HeroSection/HeroImagePreload";
-import { SITE } from "@/lib/constants";
+import { SiteJsonLd } from "@/components/atoms/SiteJsonLd/SiteJsonLd";
 import { faviconMetadata } from "@/lib/favicon";
+import { getRootMetadata } from "@/lib/site";
 import "@/styles/globals.css";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -15,12 +16,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: SITE.name,
-    template: `%s | ${SITE.name}`,
-  },
-  description:
-    "Professional home inspections in the Greater Houston Area. Inspecting with integrity, serving with purpose.",
+  ...getRootMetadata(),
   icons: faviconMetadata,
 };
 
@@ -37,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${beVietnamPro.variable} ${GeistSans.variable} font-body antialiased`}
       >
+        <SiteJsonLd />
         <GoogleAdsTag />
         <PageLayout>{children}</PageLayout>
       </body>

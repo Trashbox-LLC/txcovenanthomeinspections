@@ -3,11 +3,13 @@ import { FadeIn } from "@/components/atoms/FadeIn/FadeIn";
 import { ContactForm } from "@/components/organisms/ContactForm/ContactForm";
 import { ContactInfoPanel } from "@/components/organisms/ContactInfoPanel/ContactInfoPanel";
 import { SITE } from "@/lib/constants";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/contact",
   title: "Contact",
   description: `Get in touch with ${SITE.name}. Call, text, or send a message to schedule your home inspection.`,
-};
+});
 
 export default function ContactPage() {
   return (

@@ -4,11 +4,13 @@ import { CertificationsSection } from "@/components/organisms/CertificationsSect
 import { MeetJoelSection } from "@/components/organisms/MeetJoelSection/MeetJoelSection";
 import { SITE } from "@/lib/constants";
 import { getJoelBio } from "@/lib/content";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/about",
   title: "About Joel Piercy",
   description: `Meet Joel Piercy, certified home inspector and pastor serving the Greater Houston Area with ${SITE.name}.`,
-};
+});
 
 export default function AboutPage() {
   return (

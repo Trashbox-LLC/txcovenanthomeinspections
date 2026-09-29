@@ -8,6 +8,7 @@ import {
   getAllServiceSlugs,
   getServiceBySlug,
 } from "@/lib/services";
+import { pageMetadata } from "@/lib/site";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -27,10 +28,12 @@ export async function generateMetadata({
     return { title: "Service Not Found" };
   }
 
-  return {
+  return pageMetadata({
+    path: `/services/${service.slug}`,
     title: `${service.title} Inspection`,
     description: `${service.shortDescription} Schedule a ${service.title.toLowerCase()} inspection with ${SITE.name} in the ${SITE.location}.`,
-  };
+    image: service.image,
+  });
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {

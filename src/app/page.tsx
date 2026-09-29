@@ -5,11 +5,13 @@ import { InspectionJourneySection } from "@/components/organisms/InspectionJourn
 import { ServicesSection } from "@/components/organisms/ServicesSection/ServicesSection";
 import { WhyChooseSection } from "@/components/organisms/WhyChooseSection/WhyChooseSection";
 import { SITE } from "@/lib/constants";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Home",
+export const metadata: Metadata = pageMetadata({
+  path: "/",
+  title: { absolute: SITE.name },
   description: `${SITE.tagline} Schedule your home inspection with ${SITE.name}.`,
-};
+});
 
 export default function HomePage() {
   return (

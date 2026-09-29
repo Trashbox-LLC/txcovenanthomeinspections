@@ -3,11 +3,13 @@ import { FadeIn } from "@/components/atoms/FadeIn/FadeIn";
 import { MarkdownContent } from "@/components/molecules/MarkdownContent/MarkdownContent";
 import { SITE } from "@/lib/constants";
 import { getPrivacyPolicy } from "@/lib/content";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/privacy",
   title: "Privacy Policy",
   description: `Learn how ${SITE.name} collects and uses information submitted through our website contact form.`,
-};
+});
 
 const LAST_UPDATED = "July 10, 2026";
 
