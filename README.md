@@ -10,7 +10,7 @@ A template repository for quickly spinning up small business websites.
 - **Component Dev:** [Storybook](https://storybook.js.org/)
 - **Unit Testing:** [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/react)
 - **E2E Testing:** [Playwright](https://playwright.dev/)
-- **Deployment:** [GitHub Pages](https://pages.github.com/) via GitHub Actions
+- **Deployment:** [Vercel](https://vercel.com/) (Trashbox team)
 - **Package Manager:** [pnpm](https://pnpm.io/)
 - **Node Version:** managed via [fnm](https://github.com/Schniz/fnm) (`.node-version`)
 
@@ -63,39 +63,14 @@ pnpm dev
 2. Update `src/app/layout.tsx` with your business name and metadata
 3. Add your components in `src/components/`
 4. Add shadcn/ui components: `pnpm dlx shadcn@latest add button`
-5. Deploy to GitHub Pages (see below)
+5. Push to `main`. Vercel deploys the Trashbox project automatically.
 
-## Deploy to GitHub Pages
+## Deploy
 
-This site is a static Next.js export deployed automatically when you push to `main`.
+Pushes to `main` deploy to the Trashbox Vercel project `txcovenanthomeinspections`.
 
-### One-time setup
+Production: `https://txcovenanthomeinspections.vercel.app`
 
-1. Push this repo to GitHub.
-2. Go to **Settings → Pages** in the repository.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Go to **Settings → Secrets and variables → Actions** and add a repository secret:
-   - `NEXT_PUBLIC_TRASHBOX_API_KEY` — your Trashbox form API key
-5. Push to `main` (or run the **Deploy to GitHub Pages** workflow manually).
+Custom domain: `https://txcovenanthomeinspections.com` (`www` redirects to the apex).
 
-The site will be published at:
-
-`https://trashbox-games.github.io/txcovenanthomeinspections/`
-
-The deploy workflow uses `actions/configure-pages` to set the correct `basePath` automatically. That keeps CSS and JavaScript loading on both the `github.io` project URL and a custom domain (where `basePath` is empty).
-
-### Custom domain
-
-1. Add DNS records and set the domain under **Settings → Pages**.
-2. Push to `main` — the workflow detects the custom domain and builds with an empty `basePath`.
-3. Add the custom domain to your Trashbox API key allowed origins.
-
-You do not need to edit the workflow when switching to a custom domain.
-
-### Local dev with the Pages base path
-
-To match production routing locally:
-
-```bash
-NEXT_PUBLIC_BASE_PATH=/txcovenanthomeinspections pnpm dev
-```
+Set `NEXT_PUBLIC_TRASHBOX_API_KEY` on the Vercel project for Production and Preview. The contact form reads that key at build time. Add `https://txcovenanthomeinspections.com` to the key’s allowed origins.
