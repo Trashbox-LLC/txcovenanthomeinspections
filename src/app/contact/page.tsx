@@ -7,8 +7,8 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   path: "/contact",
-  title: "Contact",
-  description: `Get in touch with ${SITE.name}. Call, text, or send a message to schedule your home inspection.`,
+  title: "Contact a Houston Home Inspector",
+  description: `Call, text, or message ${SITE.name} to schedule a home inspection in Kingwood, Humble, Atascocita, Spring, or Greater Houston.`,
 });
 
 export default function ContactPage() {

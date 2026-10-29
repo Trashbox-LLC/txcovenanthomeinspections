@@ -17,6 +17,7 @@ export const SITE = {
 
 export const FOOTER_LINKS = [
   { label: "Services", href: "/services" },
+  { label: "Service Areas", href: "/service-areas" },
   { label: "Vendors", href: "/preferred-vendors" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

@@ -1,3 +1,4 @@
+import { SERVICE_AREAS } from "@/lib/service-areas";
 import { SERVICES } from "@/lib/services";
 
 export interface NavChildItem {
@@ -21,6 +22,14 @@ export const NAV_ITEMS: NavItem[] = [
     children: SERVICES.map((service) => ({
       label: service.title,
       href: `/services/${service.slug}`,
+    })),
+  },
+  {
+    label: "Areas",
+    href: "/service-areas",
+    children: SERVICE_AREAS.map((area) => ({
+      label: area.name,
+      href: `/service-areas/${area.slug}`,
     })),
   },
   { label: "Vendors", href: "/preferred-vendors" },

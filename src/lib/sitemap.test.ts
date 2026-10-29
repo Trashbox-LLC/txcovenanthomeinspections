@@ -1,3 +1,4 @@
+import { SERVICE_AREAS } from "./service-areas";
 import { SERVICES } from "./services";
 import { getSitemapEntries, getSitemapPaths } from "./sitemap";
 
@@ -10,6 +11,8 @@ describe("getSitemapPaths", () => {
       "/about/",
       "/services/",
       ...SERVICES.map((service) => `/services/${service.slug}/`),
+      "/service-areas/",
+      ...SERVICE_AREAS.map((area) => `/service-areas/${area.slug}/`),
       "/preferred-vendors/",
       "/contact/",
       "/privacy/",
@@ -29,6 +32,9 @@ describe("getSitemapPaths", () => {
     expect(entries[0]?.url).toBe("https://txcovenanthomeinspections.com/");
     expect(entries.map((entry) => entry.url)).toContain(
       "https://txcovenanthomeinspections.com/services/electrical/",
+    );
+    expect(entries.map((entry) => entry.url)).toContain(
+      "https://txcovenanthomeinspections.com/service-areas/kingwood/",
     );
   });
 });

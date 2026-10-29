@@ -1,4 +1,12 @@
-import { canonicalPath, getSiteUrl, pageMetadata } from "./site";
+import { canonicalPath, getSiteUrl, pageMetadata, SITE_DESCRIPTION } from "./site";
+
+describe("SITE_DESCRIPTION", () => {
+  it("targets local home inspector keywords for Houston-area search", () => {
+    expect(SITE_DESCRIPTION).toMatch(/kingwood/i);
+    expect(SITE_DESCRIPTION).toMatch(/houston/i);
+    expect(SITE_DESCRIPTION).toMatch(/home inspector/i);
+  });
+});
 
 describe("getSiteUrl", () => {
   afterEach(() => {

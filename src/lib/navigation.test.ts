@@ -28,6 +28,17 @@ describe("navigation", () => {
     expect(vendorsItem?.href).toBe("/preferred-vendors");
     expect(vendorsItem?.children).toBeUndefined();
   });
+
+  it("includes service area city pages under Areas", () => {
+    const areasItem = NAV_ITEMS.find((item) => item.label === "Areas");
+    const kingwood = areasItem?.children?.find(
+      (child) => child.label === "Kingwood",
+    );
+
+    expect(areasItem?.href).toBe("/service-areas");
+    expect(kingwood?.href).toBe("/service-areas/kingwood");
+    expect(areasItem?.children).toHaveLength(8);
+  });
 });
 
 describe("isNavItemActive", () => {
@@ -46,6 +57,9 @@ describe("isNavItemActive", () => {
     ["/services", "Services"],
     ["/services/", "Services"],
     ["/services/structural/", "Services"],
+    ["/service-areas", "Areas"],
+    ["/service-areas/", "Areas"],
+    ["/service-areas/kingwood/", "Areas"],
     ["/preferred-vendors", "Vendors"],
     ["/preferred-vendors/", "Vendors"],
     ["/contact", "Contact"],

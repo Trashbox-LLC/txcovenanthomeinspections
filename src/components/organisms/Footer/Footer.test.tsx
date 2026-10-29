@@ -32,10 +32,13 @@ describe("Footer", () => {
 
     const nav = screen.getByRole("navigation");
     expect(nav).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /services/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /^services$/i })).toHaveAttribute(
       "href",
       "/services",
     );
+    expect(
+      screen.getByRole("link", { name: /service areas/i }),
+    ).toHaveAttribute("href", "/service-areas");
     expect(screen.getByRole("link", { name: /^about$/i })).toHaveAttribute(
       "href",
       "/about",

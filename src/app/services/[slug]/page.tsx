@@ -30,8 +30,8 @@ export async function generateMetadata({
 
   return pageMetadata({
     path: `/services/${service.slug}`,
-    title: `${service.title} Inspection`,
-    description: `${service.shortDescription} Schedule a ${service.title.toLowerCase()} inspection with ${SITE.name} in the ${SITE.location}.`,
+    title: `${service.title} Inspection in Houston`,
+    description: `${service.shortDescription} Book a ${service.title.toLowerCase()} home inspection with ${SITE.name} in Kingwood and the ${SITE.location}.`,
     image: service.image,
   });
 }

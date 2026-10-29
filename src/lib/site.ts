@@ -4,7 +4,7 @@ import { HERO_IMAGE, SITE } from "@/lib/constants";
 const DEFAULT_SITE_URL = "https://txcovenanthomeinspections.com";
 
 export const SITE_DESCRIPTION =
-  "Professional home inspections in the Greater Houston Area. Inspecting with integrity, serving with purpose.";
+  "TREC-licensed home inspector serving Kingwood, Humble, Atascocita, Spring, and Greater Houston. Thorough structural, electrical, HVAC, plumbing, and appliance inspections.";
 
 export function getSiteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();

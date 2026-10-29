@@ -5,8 +5,8 @@ import { pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   path: "/services",
-  title: "Services",
-  description: `Explore home inspection services from ${SITE.name} — structural, electrical, HVAC, plumbing, and appliance inspections in the ${SITE.location}.`,
+  title: "Home Inspection Services in Houston",
+  description: `Structural, electrical, HVAC, plumbing, and appliance home inspections in Kingwood and Greater Houston from ${SITE.name}.`,
 });
 
 export default function ServicesPage() {
