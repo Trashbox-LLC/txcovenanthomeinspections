@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   path: "/service-areas",
   title: "Service Areas",
-  description: `Home inspector serving Kingwood, Humble, Atascocita, Spring, The Woodlands, Conroe, Tomball, and Greater Houston. Schedule with ${SITE.name}.`,
+  description: `Home inspector serving Kingwood, Katy, Cypress, Sugar Land, Pearland, Spring, The Woodlands, and Greater Houston. Schedule with ${SITE.name}.`,
 });
 
 export default function ServiceAreasPage() {
@@ -20,8 +20,9 @@ export default function ServiceAreasPage() {
             Home Inspection Service Areas
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-on-surface-variant">
-            TREC-licensed home inspections across the Lake Houston corridor and
-            Greater Houston Area — with clear reports and responsive support.
+            TREC-licensed home inspections across Greater Houston — from
+            Kingwood and Porter to Katy, Cypress, Sugar Land, and Pearland —
+            with clear reports and responsive support.
           </p>
         </FadeIn>
       </div>

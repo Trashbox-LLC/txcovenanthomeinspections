@@ -15,7 +15,7 @@ export function ServiceAreasSection() {
         <FadeIn>
           <SectionHeader
             title="Areas We Serve"
-            description="Local home inspections across Kingwood, Humble, Atascocita, Spring, The Woodlands, Conroe, Tomball, and Greater Houston."
+            description="Local home inspections across Kingwood, Katy, Cypress, Sugar Land, Pearland, The Woodlands, and Greater Houston."
             showAccent
           />
         </FadeIn>

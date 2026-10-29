@@ -37,7 +37,7 @@ describe("navigation", () => {
 
     expect(areasItem?.href).toBe("/service-areas");
     expect(kingwood?.href).toBe("/service-areas/kingwood");
-    expect(areasItem?.children).toHaveLength(8);
+    expect(areasItem?.children).toHaveLength(16);
   });
 });
 

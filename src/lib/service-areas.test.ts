@@ -15,13 +15,21 @@ describe("service-areas", () => {
       "houston",
       "conroe",
       "tomball",
+      "katy",
+      "cypress",
+      "sugar-land",
+      "pearland",
+      "pasadena",
+      "fulshear",
+      "magnolia",
+      "porter",
     ]);
   });
 
   it("returns a service area by slug", () => {
-    const area = getServiceAreaBySlug("kingwood");
+    const area = getServiceAreaBySlug("katy");
 
-    expect(area?.name).toBe("Kingwood");
+    expect(area?.name).toBe("Katy");
     expect(area?.state).toBe("TX");
     expect(area?.headline).toMatch(/home inspector/i);
     expect(area?.description.length).toBeGreaterThan(80);
