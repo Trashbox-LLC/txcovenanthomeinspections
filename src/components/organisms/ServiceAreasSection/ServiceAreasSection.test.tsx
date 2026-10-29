@@ -34,4 +34,15 @@ describe("ServiceAreasSection", () => {
       ).toHaveAttribute("href", `/service-areas/${area.slug}`);
     }
   });
+
+  it("invites callers when their city is not listed", () => {
+    render(<ServiceAreasSection />);
+
+    expect(
+      screen.getByText(/can.?t find your city\?/i),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /\(832\) 470-5230/i }),
+    ).toHaveAttribute("href", "tel:8324705230");
+  });
 });

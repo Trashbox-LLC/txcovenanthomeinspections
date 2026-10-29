@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { FadeIn } from "@/components/atoms/FadeIn/FadeIn";
 import { SectionHeader } from "@/components/molecules/SectionHeader/SectionHeader";
+import { SITE } from "@/lib/constants";
 import { SERVICE_AREAS } from "@/lib/service-areas";
 import { staggerContainer } from "@/lib/motion";
 
@@ -56,6 +57,19 @@ export function ServiceAreasSection() {
             </motion.li>
           ))}
         </motion.ul>
+
+        <FadeIn className="mt-stack-lg text-center">
+          <p className="text-base text-on-surface-variant md:text-lg">
+            Can&apos;t find your city? Give us a call — we may still cover your
+            area.{" "}
+            <a
+              href={SITE.phoneHref}
+              className="font-semibold text-primary underline-offset-2 transition-colors hover:text-gold hover:underline"
+            >
+              {SITE.phone}
+            </a>
+          </p>
+        </FadeIn>
       </div>
     </section>
   );
